@@ -20,7 +20,7 @@ const getDataCards = (data) => {
 
 const drawCard = (image, title, type, episodes, status, date) => {
 
-    console.log(image, title, type, episodes, status, date);
+    // console.log(image, title, type, episodes, status, date);
     let divCard = document.createElement("div");
     divCard.classList.add("card", "text-center", "d-flex", "align-items-center", "fw-bolder", "justify-content-center");
     divCard.setAttribute("id", "cardStyle");
@@ -44,13 +44,13 @@ const drawCard = (image, title, type, episodes, status, date) => {
         detailCard.innerHTML = `
         <div id="poster">
             <img src="${image}" class="rounded" id="imgCard">
-            <div class="rounded text-center" id="status"><p class="fs-6">Status: ${status}</p></div>  
+            <div class="rounded text-center" id="status"><p class="fs-6"><b>${status}</b></p></div>  
         </div>
         <div id="about">
-            <div class="titleAbout"><h1>${title}</h1></div>
+            <div class="titleAbout"><b><h1>${title}</b></h1></div>
             <div class="rounded text-center" id="type"><h4>${type}</h4></div>
-            <p class="fs-5">Episodes: ${episodes}</p>
-            <p class="fs-5">Aired: ${date}</p>
+            <p class="fs-5"><b>Episodes:</b> ${episodes}</p>
+            <p class="fs-5"><b>Aired:</b> ${date}</p>
         </div>`
         
         infoCards.append(detailCard);

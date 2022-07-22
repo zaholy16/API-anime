@@ -75,6 +75,11 @@
     margin: 20px;
 }
 
+#type, #about, #status {
+    margin: 20px 0px 20px 0px;
+    padding: 5px;
+}
+
 #status {
     width: 100%;
     background-color: rgb(175, 32, 32);
@@ -84,20 +89,14 @@
 #about {
     /* border: 1px solid violet; */
     width: 100%;
-    margin: 20px 0px 20px 0px;
     color: black;
 }
 
 #type {
-    padding: 5px;
     width: 10%;
     background-color: rgb(143, 180, 227);
 }
 
-#type, #status {
-    margin: 20px 0px 20px 0px;
-    padding: 5px;
-}
 
 #titleAbout {
     margin: 20px;
