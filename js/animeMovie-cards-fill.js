@@ -5,7 +5,7 @@ let movie = document.querySelector("#navbar-movie");
 tv.addEventListener("click", () => {
 
     resultsCards.innerHTML = " ";
-    // divInfoCard.innerHTML = " ";
+    detailCard.innerHTML = " ";
     divTitle.innerHTML = `<h1>Animes</h1>`
 
     cards.forEach(cardsTV => {
@@ -22,7 +22,7 @@ tv.addEventListener("click", () => {
 movie.addEventListener("click", () => {
    
     resultsCards.innerHTML = " ";
-    // divInfoCard.innerHTML = " ";
+    detailCard.innerHTML = " ";
     divTitle.innerHTML = `<h1>Movies</h1>`
 
     cards.forEach(cardsMovie => {

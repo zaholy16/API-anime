@@ -3,7 +3,7 @@ let cards = [];
 let resultsCards = document.querySelector('#cards-container');
 let title = document.querySelector('#title-container');
 let infoCards = document.querySelector('#infoCard-container');
-let divCard = document.createElement("div");
+let detailCard = document.querySelector('#infoCard');
 
 let divTitle = document.createElement("div");
 divTitle.setAttribute("id", "titleStyle")
@@ -14,7 +14,7 @@ const getDataCards = (data) => {
     cards.push(data.data);
     cards.forEach(cardsBase => {
         cardsBase.forEach(card => {
-            drawCard(card.images.jpg.image_url, card.title);
+            drawCard(card.images.jpg.image_url, card.title, card.mal_id);
         });
     });
 }
@@ -34,37 +34,20 @@ const drawCard = (image, title) => {
     resultsCards.append(divCard);
 
     divCard.addEventListener("click", () => {
-        getDetailsCard();
+
+        resultsCards.innerHTML = " "; 
+        divTitle.innerHTML = " ";
+
+        detailCard.innerHTML = `
+        <div id="poster">
+            <img src="${image}" class="rounded" id="imgCard">
+        </div>
+        <div id="about">
+            <h3>${title}</h3>
+        </div>`
+
+        infoCards.append(detailCard);
     });
-}
-
-const getDetailsCard = () => {
-    
-    cards.forEach(cardsBase => {
-        cardsBase.forEach(card => {
-            drawDetailCard(card.images.jpg.image_url, card.title);
-        });
-    });
-}
-
-const drawDetailCard = (image, title) => {
-
-    resultsCards.innerHTML = " "; 
-    divTitle.innerHTML = " ";
-
-    let divInfoCard = document.createElement("div");
-    divInfoCard.classList.add("container", "d-flex", "flex-row", "justify-content-around");
-    divInfoCard.setAttribute("id", "infoCard");
-
-    divInfoCard.innerHTML = `
-    <div id="poster">
-        <img src="${image}" class="rounded" id="imgCard">
-    </div>
-    <div id="about">
-        <h3>${title}</h3>
-    </div>`
-
-    infoCards.append(divInfoCard);
 }
 
 fetch(`${URL_ANIME}`) //Promesa para traer datos de la API
