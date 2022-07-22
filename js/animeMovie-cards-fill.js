@@ -13,7 +13,7 @@ tv.addEventListener("click", () => {
             let {type} = cardTV;
             
             if(type == "TV"){
-                drawCard(cardTV.images.jpg.image_url, cardTV.title);
+                drawCard(cardTV.images.jpg.image_url, cardTV.title, cardTV.type, cardTV.episodes, cardTV.status, cardTV.aired.string);
             }
         });
     });
@@ -30,7 +30,7 @@ movie.addEventListener("click", () => {
             let {type} = cardMovie;
             
             if(type == "Movie"){
-                drawCard(cardMovie.images.jpg.image_url, cardMovie.title);
+                drawCard(cardMovie.images.jpg.image_url, cardMovie.title, cardMovie.type, cardMovie.episodes, cardMovie.status, cardMovie.aired.string);
             }
         });
     });

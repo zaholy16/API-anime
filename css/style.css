@@ -58,31 +58,49 @@
     height: 220px;
 }
 
-#cardStyle p {
-    font-weight: 600;
-    font-size: 18px;
-}
-
 #titleStyle {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: black;
 }
 
 #infoCard {
+    width: 80%;
     padding-left: 25px;
     margin-bottom: 25px;
-    border: 1px solid violet;
+    /* border: 1px solid rgb(28, 124, 168); */
 }
 
 #poster {
+    /* border: 1px solid rgb(35, 67, 71); */
     margin: 20px;
 }
 
+#status {
+    width: 100%;
+    background-color: rgb(175, 32, 32);
+    color: #fff;
+}
+
 #about {
-    width: 80%;
-    border: 1px solid crimson;
-    margin: 20px;
+    /* border: 1px solid violet; */
+    width: 100%;
+    margin: 20px 0px 20px 0px;
     color: black;
+}
+
+#type {
+    padding: 5px;
+    width: 10%;
+    background-color: rgb(143, 180, 227);
+}
+
+#type, #status {
+    margin: 20px 0px 20px 0px;
+    padding: 5px;
+}
+
+#titleAbout {
+    margin: 20px;
 }
 
 
