@@ -5,19 +5,18 @@
 
 .app {
     margin: auto;
-    width: 60vw;
-    min-width: 600px;
-}
-
-.app, #cards-container, #cardStyle {
-    background-color: black;
+    width: 100%;
 }
 
 #navBar {
-    margin-top: 20px;
     color: black;
     font-weight: bolder;
     background-color: rgb(143, 180, 227);
+    position: fixed;
+    width: 100%;
+    padding: 15px;
+    z-index: 1;
+    top: 0;
 }
 
 #img-logo-nav {
@@ -28,53 +27,59 @@
 
 .text-nav {
     font-size: large;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-#cards-container {
-    margin-top: 25px;
+#cards-container{
+    padding-top: 20px;
+}
+
+#title-container {
+    margin-left: 30px;
+    margin-top: 20px;
+    padding-top: 100px;
 }
 
 #cardStyle:hover {
-    transform:scale(1.05);
-    color: white;
+    transform:scale(1.08);
+    color: black;
 }
 
 #cardStyle {
-    width: 16.6%;
-    color: white;
+    border: none;
+    width: 20rem;
+    color: black;
     margin: 15px;
     height: 310px;
 }
 
 #cardStyle img {
+    width: 65%;
     height: 220px;
 }
 
 #cardStyle p {
-    font-size: 14px;
+    font-weight: 600;
+    font-size: 18px;
 }
 
 #titleStyle {
-    font-family: cursive;
-    margin: 25px;
-    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
 }
 
 #infoCard {
-    padding-left: 20px;
+    padding-left: 25px;
+    margin-bottom: 25px;
     border: 1px solid violet;
 }
 
-#poster img {
-    width: 100%;
-    padding: 20px;
+#poster {
+    margin: 20px;
 }
 
 #about {
-    display: flex;
-    /* justify-content: flex-end; */
-    width: 50%;
+    width: 80%;
     border: 1px solid crimson;
     margin: 20px;
     color: white;
