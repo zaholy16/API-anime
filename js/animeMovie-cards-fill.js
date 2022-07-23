@@ -6,6 +6,7 @@ tv.addEventListener("click", () => {
 
     resultsCards.innerHTML = " ";
     detailCard.innerHTML = " ";
+    synopsis.innerHTML = " ";
     divTitle.innerHTML = `<h1>Animes</h1>`
 
     cards.forEach(cardsTV => {
@@ -23,6 +24,7 @@ movie.addEventListener("click", () => {
    
     resultsCards.innerHTML = " ";
     detailCard.innerHTML = " ";
+    synopsis.innerHTML = " ";
     divTitle.innerHTML = `<h1>Movies</h1>`
 
     cards.forEach(cardsMovie => {

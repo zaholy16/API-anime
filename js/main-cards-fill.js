@@ -1,8 +1,10 @@
 let cards = [];
 let detailCard = " ";
+let synopsis = " ";
 let resultsCards = document.querySelector('#cards-container');
 let title = document.querySelector('#title-container');
 let containerInfo = document.querySelector('#infoCard-container');
+let containerSynopsis = document.querySelector('#synopsis-container');
 
 let divTitle = document.createElement("div");
 divTitle.setAttribute("id", "titleStyle")
@@ -88,14 +90,14 @@ const drawCard = (image, title, type, episodes, status, date, score, popularity,
         </div>`
 
         synopsis = document.createElement("div");
-        synopsis.setAttribute("id", "synopsisInfo");
         synopsis.classList.add("container");
+        synopsis.setAttribute("id", "synopsisInfo");
 
-        synopsis.innerHTML = `<div><h1>Synopsis</h1>
-            <p>${synopsis}</p></div>`
+        synopsis.innerHTML = `<h1>Synopsis</h1>
+            <p>${synopsis}</p>`
 
-        containerInfo.appendChild(detailCard);
-        containerInfo.appendChild(synopsis);
+        containerInfo.append(detailCard);
+        containerSynopsis.append(synopsis);
     });
 }
 
