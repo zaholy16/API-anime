@@ -13,12 +13,12 @@ const getDataCards = (data) => {
     cards.push(data.data);
     cards.forEach(cardsBase => {
         cardsBase.forEach(card => {
-            drawCard(card.images.jpg.image_url, card.title, card.type, card.episodes, card.status, card.aired.string);
+            drawCard(card.images.jpg.image_url, card.title, card.type, card.episodes, card.status, card.aired.string, card.score, card.popularity, card.favorites);
         });
     });
 }
 
-const drawCard = (image, title, type, episodes, status, date) => {
+const drawCard = (image, title, type, episodes, status, date, score, popularity, favorites) => {
 
     // console.log(image, title, type, episodes, status, date);
     let divCard = document.createElement("div");
@@ -43,16 +43,34 @@ const drawCard = (image, title, type, episodes, status, date) => {
 
         detailCard.innerHTML = `
         <div id="poster">
-            <img src="${image}" class="rounded" id="imgCard">
-            <div class="rounded text-center" id="status"><p class="fs-6"><b>${status}</b></p></div>  
+            <div class="row d-flex justify-content-center align-items-center">
+                <img src="${image}" id="imgCard">
+                <p class="fs-5 rounded text-center" id="status"><b>${status}</b></p>
+            </div>
         </div>
         <div id="about">
-            <div class="titleAbout"><b><h1>${title}</b></h1></div>
-            <div class="rounded text-center" id="type"><h4>${type}</h4></div>
+            <div id="titleAbout"><b><h1>${title}</b></h1></div>
+            <div class="rounded text-center container" id="type"><h4>${type}</h4></div>
             <p class="fs-5"><b>Episodes:</b> ${episodes}</p>
             <p class="fs-5"><b>Aired:</b> ${date}</p>
+        </div>
+        <div id="ranked" class="d-flex justify-content-center align-items-center">
+            <div id="container-ranked" class="d-flex justify-content-around align-items-center rounded">
+                <div id="left" class="text-center border-end">
+                    <b><p class="fs-4">Score</b></p>
+                    <p class="fs-5">${score}</p>
+                </div>
+                <div id="center" class="text-center border-end">
+                    <p class="fs-4"><b>Popularity</b></p>
+                    <p class="fs-5">${popularity}</p>
+                </div>
+                <div id="right" class="text-center fs-4"">
+                    <p class="fs-4"><b>Favorites</b></p>
+                    <p class="fs-5">${favorites}</p>
+                </div>
+            </div>
         </div>`
-        
+
         infoCards.append(detailCard);
     });
 }
