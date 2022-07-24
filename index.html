@@ -20,15 +20,18 @@
           <a class="navbar-brand text-nav" href="index.html"><img id="img-logo-nav" src="./img/logo-anime.png" alt="Main page"></a>
           <div class="collapse navbar-collapse text-nav rounded">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
-              <li class="nav-item">
+              <li class="nav-item me-2">
                 <a class="nav-link fs-4" id="navbar-random" href="#">Random</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item me-2">
                 <a class="nav-link fs-4" id="navbar-tv" href="#">TV</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item me-2">
                 <a class="nav-link fs-4" id="navbar-movie" href="#">Movies</a>
               </li>
+              <select class="form-select form-select-lg-sm" id="select" disabled>
+                <option selected>Types</option>
+              </select>
             </ul>
             <form class="d-flex" role="search">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -64,6 +67,7 @@
    
     <script src="./js/routes.js"></script>
     <script src="./js/main-page.js"></script>
+    <script src="./js/select.js"></script>
     <script src="./js/functions.js"></script>
     <script src="./js/tv-movies.js"></script>
     <script src="./js/randomAnime.js"></script>

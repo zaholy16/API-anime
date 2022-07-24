@@ -2,9 +2,10 @@ const clear = () => {
     resultsCards.innerHTML = " ";
     detailCard.innerHTML = " ";
     containerSynopsis.innerHTML = " ";
+    divTitle.innerHTML = " ";
 }
 
-const drawDetailCard = (image, title, type, episodes, status, date, score, popularity, favorites, synopsis) => {
+const drawDetails = (image, title, type, episodes, status, date, score, popularity, favorites, synopsis) => {
 
     clear();
     

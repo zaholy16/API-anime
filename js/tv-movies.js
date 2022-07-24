@@ -16,7 +16,6 @@ const getCardTV = (data) => {
             }
         });
     });
-    console.log(typeAnime);
 }
 
 const getCardMovie = (data) => {
@@ -32,9 +31,7 @@ const getCardMovie = (data) => {
             }
         });
     });
-    console.log(typeMovie);
 }
-
 
 tv.addEventListener("click", () => {
 

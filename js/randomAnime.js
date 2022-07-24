@@ -5,14 +5,13 @@ let getRandomAnime = (data) => {
 
     randomAnime.push(data.data);
     randomAnime.forEach(random => {
-        console.log(random);
-        drawDetailCard(random.images.jpg.image_url, random.title, random.type, random.episodes, random.status, random.aired.string, random.score, random.popularity, random.favorites, random.synopsis);
+        drawDetails(random.images.jpg.image_url, random.title, random.type, random.episodes, random.status, random.aired.string, random.score, random.popularity, random.favorites, random.synopsis);
     });
-   
-    console.log(randomAnime);
 }
 
 random.addEventListener("click", () => {
+
+    clear();
 
     fetch(`${URL_RANDOM}`) //Promesa para traer datos de la API
     .then(response => response.json())
