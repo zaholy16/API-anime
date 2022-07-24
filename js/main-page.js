@@ -37,9 +37,7 @@ const drawCard = (image, title, type, episodes, status, date, score, popularity,
 
     divCard.addEventListener("click", () => {
 
-        resultsCards.innerHTML = " "; 
-        divTitle.innerHTML = " ";
-    
+        clear();
         drawDetails(image, title, type, episodes, status, date, score, popularity, favorites, synopsis);
     });
 }

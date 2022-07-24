@@ -35,9 +35,8 @@
 }
 
 #titleStyle {
-    background-color: rgb(84, 135, 202);
-    padding: 5px;
-    width: 35vh;
+    /* background-color: rgb(84, 135, 202); */
+    padding: 15px;
 }
 
 #cards-container{
