@@ -8,7 +8,7 @@ const getGenres = (data) => {
     genres.push(data.data);
     genres.forEach(genres => {
         genres.forEach(genre => {
-            console.log(genre.name);
+            // console.log(genre.name);
 
             let option = document.createElement("option");
             option.setAttribute("value", genre.mal_id);
@@ -19,6 +19,6 @@ const getGenres = (data) => {
     });
 }
 
-fetch(`${URL_GENRES}`) //Promesa para traer datos de la API
+fetch(`${URL}/genres/anime`) //Promesa para traer datos de la API
     .then(response => response.json())
     .then(data => getGenres(data)); 

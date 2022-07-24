@@ -34,6 +34,12 @@
     background-color: rgb(84, 135, 202);
 }
 
+#titleStyle {
+    background-color: rgb(84, 135, 202);
+    padding: 5px;
+    width: 35vh;
+}
+
 #cards-container{
     padding-top: 20px;
 }
@@ -125,7 +131,6 @@
 }
 
 #synopsis-container {
-    /* border: 1px solid cyan; */
     padding-right: 7%;
     padding-left: 12%;
     text-align: justify;

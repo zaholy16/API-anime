@@ -7,9 +7,10 @@ let containerInfo = document.querySelector('#infoCard-container');
 let containerSynopsis = document.querySelector('#synopsis-container');
 
 let divTitle = document.createElement("div");
-divTitle.setAttribute("id", "titleStyle")
+divTitle.classList.add("rounded", "text-center");
+divTitle.setAttribute("id", "titleStyle");
 title.append(divTitle);
-divTitle.innerHTML = `<h1>Top</h1>`;
+divTitle.innerHTML = `<h1>Most polular</h1>`;
 
 const getTopCards = (data) => {
     
@@ -43,39 +44,8 @@ const drawCard = (image, title, type, episodes, status, date, score, popularity,
     });
 }
 
-fetch(`${URL_TOP}`) //Promesa para traer datos de la API
+fetch(`${URL}/top/anime`) //Promesa para traer datos de la API
   .then(response => response.json())
   .then(data => {
-    // topCards = data.data;
     getTopCards(data);
 }); 
-
-
-// const getTopCards = (data) => {
-    
-//     topCards.push(data.data);
-//     topCards.forEach(cards => {
-//         cards.forEach(data => {
-            
-//             let divCard = document.createElement("div");
-//             divCard.classList.add("card", "text-center", "d-flex", "align-items-center", "fw-bolder", "justify-content-center");
-//             divCard.setAttribute("id", "cardStyle");
-
-//             divCard.innerHTML = `
-//             <img src="${data.images.jpg.image_url}" class="rounded" id="imgCard">
-//             <div class="card-body d-flex align-items-center justify-content-center" id="titleCard">
-//                 <p class="fs-5">${data.title}</p>
-//             </div> `;
-
-//             resultsCards.append(divCard);
-
-//             divCard.addEventListener("click", () => {
-
-//                 resultsCards.innerHTML = " "; 
-//                 divTitle.innerHTML = " ";
-            
-//                 drawDetails(data.images.jpg.image_url, data.title, data.type, data.episodes, data.status, data.aired.string, data.score, data.popularity, data.favorites, data.synopsis);
-//             });
-//         });
-//     });
-// }

@@ -13,7 +13,7 @@ random.addEventListener("click", () => {
 
     clear();
 
-    fetch(`${URL_RANDOM}`) //Promesa para traer datos de la API
+    fetch(`${URL}/random/anime`) //Promesa para traer datos de la API
     .then(response => response.json())
     .then(data => getRandomAnime(data)); 
 
