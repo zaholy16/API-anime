@@ -20,18 +20,18 @@
           <a class="navbar-brand text-nav" href="index.html"><img id="img-logo-nav" src="./img/logo-anime.png" alt="Main page"></a>
           <div class="collapse navbar-collapse text-nav rounded">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
-              <li class="nav-item me-2">
-                <a class="nav-link fs-4" id="navbar-random" href="#">Random</a>
-              </li>
-              <li class="nav-item me-2">
+              <select class="form-select form-select-lg-sm me-4" id="select">
+                <option value="0" selected>Categories</option>
+              </select>
+              <li class="nav-item me-4">
                 <a class="nav-link fs-4" id="navbar-tv" href="#">TV</a>
               </li>
-              <li class="nav-item me-2">
+              <li class="nav-item me-4">
                 <a class="nav-link fs-4" id="navbar-movie" href="#">Movies</a>
               </li>
-              <select class="form-select form-select-lg-sm" id="select">
-                <option selected>Types</option>
-              </select>
+              <li class="nav-item me-4">
+                <a class="nav-link fs-4" id="navbar-random" href="#">Random</a>
+              </li>
             </ul>
             <form class="d-flex" role="search" id="search">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="searchAnime">
@@ -46,31 +46,33 @@
         </div>
       </nav>
 
-      <!-- Main Content -->
-      <div>
+      <main id="main-content">
+        <!-- Main Content -->
+        <div>
           <div id="title-container"></div>
-      </div>
-      <div>
+        </div>
+        <div>
         <div id="cards-container" class="row d-flex justify-content-center">
+          <!-- <div id="msg-error"></div> -->
           <!-- <div id="cardStyle" class="card text-center d-flex align-items-center justify-content-center"></div> -->
         </div>
-      </div>
-      <div>
+        </div>
+        <div>
         <div id="infoCard-container" class="row d-flex justify-content-center">
           <!-- <div id="infoCard" class="container d-flex flex-row justify-content-around"></div> -->
         </div>
         <div id="synopsis-container" class="row d-flex justify-content-center">
           <!-- <div id="synopsisInfo" class="container></div> -->
         </div>
-      </div>
-    </div>
-   
+        </div>
+        </div>
+      </main>
     <script src="./js/routes.js"></script>
-    <script src="./js/main-page.js"></script>
+    <script src="./js/main-popular.js"></script>
     <script src="./js/select.js"></script>
     <script src="./js/functions.js"></script>
     <script src="./js/search.js"></script>
     <script src="./js/tv-movies.js"></script>
-    <script src="./js/randomAnime.js"></script>
+    <script src="./js/random.js"></script>
   </body>
 </html>

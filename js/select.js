@@ -1,24 +1,32 @@
-
-let genres = [];
-
 let select = document.querySelector("#select");
+let idGenre;
 
-const getGenres = (data) => {
+const renderSelectGenres = (genres) => {
 
-    genres.push(data.data);
-    genres.forEach(genres => {
-        genres.forEach(genre => {
-            // console.log(genre.name);
+    genres.forEach(genre => {
+        let option = document.createElement("option");
+        option.setAttribute("value", genre.mal_id);
+        option.innerText = genre.name;
 
-            let option = document.createElement("option");
-            option.setAttribute("value", genre.mal_id);
-            option.innerText = genre.name;
-
-            select.appendChild(option);
-        });
+        select.appendChild(option);
     });
 }
 
-fetch(`${URL}/genres/anime`) //Promesa para traer datos de la API
+fetch(`${URL}/genres/anime`)
+.then(response => response.json())
+.then(data => renderSelectGenres(data.data)); 
+
+select.addEventListener("change", (evt) => {
+
+    idGenre = parseInt(evt.target.value);
+    clear();
+
+    if(idGenre == 0){
+        window.location.reload();
+    }
+
+    fetch(`${URL}/anime?genres=${idGenre}`) 
     .then(response => response.json())
-    .then(data => getGenres(data)); 
+    .then(data => getCards(data.data)); 
+});
+

@@ -1,26 +1,24 @@
 let formSearch = document.querySelector('#search');
 
 const getResultsSearch = (results) => {
-    console.log(results);
 
-   results.forEach(card => {
-        drawCard(card.images.jpg.image_url, card.title, card.type, card.episodes, card.status, card.aired.string, card.score, card.popularity, card.favorites, card.synopsis);
-   });   
+    if(results.length == 0){
+        let msgError = document.createElement("div");
+        msgError.classList.add("text-center");
+        msgError.innerHTML = `<h1>No results found</h1>`
+        resultsCards.appendChild(msgError);
+    }else {
+        getCards(results);
+    }
 }
 
 formSearch.addEventListener("submit", (evt) => {
     evt.preventDefault();
    
     let {searchAnime} = evt.target;
-    console.log(searchAnime.value);
-
     clear();
 
     fetch(`${URL}/anime?letter=${searchAnime.value}`) //Promesa para traer datos de la API
         .then(response => response.json())
         .then(data => getResultsSearch(data.data)); 
 });
-
-// let peticion = ['kimetsu', "naruto", "spy"];
-// let result = peticion.filter(name => name.includes(searchAnime.value));
-// console.log(result);

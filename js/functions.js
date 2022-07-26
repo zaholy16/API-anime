@@ -5,9 +5,30 @@ const clear = () => {
     divTitle.innerHTML = " ";
 }
 
-const drawDetails = (image, title, type, episodes, status, date, score, popularity, favorites, synopsis) => {
+const drawCard = (image, title, type, episodes, status, date, stringGenres, score, popularity, favorites, synopsis) => {
+    let divCard = document.createElement("div");
+    divCard.classList.add("card", "text-center", "d-flex", "align-items-center", "fw-bolder", "justify-content-center");
+    divCard.setAttribute("id", "cardStyle");
+
+    divCard.innerHTML = `
+    <img src="${image}" class="rounded" id="imgCard">
+    <div class="card-body d-flex align-items-center justify-content-center" id="titleCard">
+        <p class="fs-5">${title}</p>
+    </div> `;
+
+    resultsCards.append(divCard);
+
+    divCard.addEventListener("click", () => {
+
+        clear();
+        drawDetails(image, title, type, episodes, status, date, stringGenres, score, popularity, favorites, synopsis);
+    });
+}
+
+const drawDetails = (image, title, type, episodes, status, date, stringGenres, score, popularity, favorites, synopsis) => {
 
     clear();
+    // console.log(genres.name);
     
     detailCard = document.createElement("div");
     detailCard.classList.add("container", "d-flex", "flex-row", "justify-content-around");
@@ -18,7 +39,7 @@ const drawDetails = (image, title, type, episodes, status, date, score, populari
 
     poster.innerHTML = `
     <div class="row d-flex justify-content-center align-items-center">
-        <img src="${image}" id="imgCard">
+        <img src="${image}" class="rounded" id="imgCard">
         <p class="fs-5 rounded text-center" id="status"><b>${status}</b></p>
     </div>`
 
@@ -29,7 +50,9 @@ const drawDetails = (image, title, type, episodes, status, date, score, populari
     <div id="titleAbout"><b><h1>${title}</b></h1></div>
     <div class="rounded text-center" id="type"><h4>${type}</h4></div>
     <p class="fs-4"><b>Episodes:</b> ${episodes}</p>
-    <p class="fs-4"><b>Aired:</b> ${date}</p>`;
+    <p class="fs-4"><b>Aired:</b> ${date}</p>
+    <p class="fs-4"><b>Genres:</b> ${stringGenres}</p>
+    `;
 
     let ranked = document.createElement("div");
     ranked.classList.add("row", "d-flex", "justify-content-center","align-items-center")
@@ -91,11 +114,3 @@ const drawDetails = (image, title, type, episodes, status, date, score, populari
 
     containerInfo.append(detailCard);
 }
-
-
-const trailer = (trailer) => {
-    return trailer;
-}
-
-let video = "https://www.youtube.com/watch?v=Zn1filVUyf8";
-trailer(video);

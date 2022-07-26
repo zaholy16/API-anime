@@ -5,7 +5,11 @@ let getRandomAnime = (data) => {
 
     randomAnime.push(data.data);
     randomAnime.forEach(random => {
-        drawDetails(random.images.jpg.image_url, random.title, random.type, random.episodes, random.status, random.aired.string, random.score, random.popularity, random.favorites, random.synopsis);
+        genres = random.genres;
+        genres.forEach(genre => {
+            stringGenres += genre.name + " | ";
+        });
+        drawDetails(random.images.jpg.image_url, random.title, random.type, random.episodes, random.status, random.aired.string, stringGenres, random.score, random.popularity, random.favorites, random.synopsis);
     });
 }
 

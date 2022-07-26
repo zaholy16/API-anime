@@ -74,11 +74,16 @@
 }
 
 #infoCard-container {
+    margin-top: -60px;
     background-color: rgb(154, 187, 249);
 }
 
 #poster img {
     margin-bottom: 20px;
+}
+
+#msg-error {
+    color: black;
 }
 
 #about, #ranked, #poster {
@@ -97,7 +102,7 @@
 
 #about {
     padding-left: 25px;
-    width: 60%;
+    width: 80%;
     color: black;
 }
 
