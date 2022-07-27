@@ -1,8 +1,13 @@
+
+let resultsCards = document.querySelector('#cards-container');
+let containerInfo = document.querySelector('#infoCard-container');
+let containerSynopsis = document.querySelector('#synopsis-container');
+
 const clear = () => {
     resultsCards.innerHTML = " ";
     detailCard.innerHTML = " ";
     containerSynopsis.innerHTML = " ";
-    divTitle.innerHTML = " ";
+
 }
 
 const drawCard = (image, title, type, episodes, status, date, stringGenres, score, popularity, favorites, synopsis) => {
@@ -21,6 +26,8 @@ const drawCard = (image, title, type, episodes, status, date, stringGenres, scor
     divCard.addEventListener("click", () => {
 
         clear();
+        divTitle.innerHTML = "";
+        footerNav.hidden = false;
         drawDetails(image, title, type, episodes, status, date, stringGenres, score, popularity, favorites, synopsis);
     });
 }
@@ -28,7 +35,6 @@ const drawCard = (image, title, type, episodes, status, date, stringGenres, scor
 const drawDetails = (image, title, type, episodes, status, date, stringGenres, score, popularity, favorites, synopsis) => {
 
     clear();
-    // console.log(genres.name);
     
     detailCard = document.createElement("div");
     detailCard.classList.add("container", "d-flex", "flex-row", "justify-content-around");

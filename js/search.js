@@ -17,8 +17,9 @@ formSearch.addEventListener("submit", (evt) => {
    
     let {searchAnime} = evt.target;
     clear();
+    footerNav.innerHTML = " ";
 
-    fetch(`${URL}/anime?letter=${searchAnime.value}`) //Promesa para traer datos de la API
+    fetch(`${URL}/anime?letter=${searchAnime.value}`)
         .then(response => response.json())
         .then(data => getResultsSearch(data.data)); 
 });

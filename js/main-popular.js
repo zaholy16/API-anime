@@ -1,13 +1,11 @@
 
-let detailCard = " ";
 let genres = [];
-let names = [];
 let stringGenres = "";
+let detailCard = " ";
+let idGenre;
 
-let resultsCards = document.querySelector('#cards-container');
+let home = document.querySelector('#home');
 let title = document.querySelector('#title-container');
-let containerInfo = document.querySelector('#infoCard-container');
-let containerSynopsis = document.querySelector('#synopsis-container');
 
 let divTitle = document.createElement("div");
 divTitle.classList.add("rounded", "text-center");
@@ -28,9 +26,21 @@ const getCards = (data) => {
     });
 }
 
-fetch(`${URL}/top/anime`) //Promesa para traer datos de la API
+fetch(`${URL}/top/anime`)
 .then(response => response.json())
 .then(data => {
     getCards(data.data);
+    footerNav.hidden = true;
 });
+
+
+
+
+
+
+
+
+
+
+
 

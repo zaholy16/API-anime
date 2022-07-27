@@ -5,7 +5,8 @@ let titles = ["Most popular TVs", "Most Popular Movies"];
 
 tv.addEventListener("click", () => {
 
-    clear();
+    // clear();
+    // footerNav.hidden = true;
     divTitle.innerHTML = `<h1>TV</h1>`;
 
     if(idGenre == undefined){
@@ -17,7 +18,8 @@ tv.addEventListener("click", () => {
 
 movie.addEventListener("click", () => {
 
-    clear();
+    // clear();
+    // footerNav.hidden = true;
     divTitle.innerHTML = `<h1>Movies</h1>`;
     
     if(idGenre == undefined){
@@ -29,14 +31,23 @@ movie.addEventListener("click", () => {
 
 const getTopMovieTV = (type, title) => {
 
+    clear();
     divTitle.innerHTML = `<h1>${title}</h1>`;
-    fetch(`${URL}/top/anime?type=${type}`) //Promesa para traer datos de la API
+    fetch(`${URL}/top/anime?type=${type}`)
     .then(response => response.json())
-    .then(data => getCards(data.data)); 
+    .then(data => {
+        getCards(data.data);
+        footerNav.hidden = true;
+    }); 
 }
 
 const getTVMovieBySelect = (type) => {
-    fetch(`${URL}/anime?genres=${idGenre}&type=${type}`) //Promesa para traer datos de la API
+    
+    clear();
+    fetch(`${URL}/anime?genres=${idGenre}&type=${type}`)
     .then(response => response.json())
-    .then(data => getCards(data.data)); 
+    .then(data => { 
+        getCards(data.data);
+        footerNav.hidden = true;
+    }); 
 }

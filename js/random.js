@@ -16,6 +16,8 @@ let getRandomAnime = (data) => {
 random.addEventListener("click", () => {
 
     clear();
+    divTitle.innerHTML = "";
+    // footerNav.hidden = false;
 
     fetch(`${URL}/random/anime`) //Promesa para traer datos de la API
     .then(response => response.json())
