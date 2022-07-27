@@ -1,7 +1,7 @@
 
 let genres = [];
 let stringGenres = "";
-let detailCard = " ";
+let detailCard = "";
 let idGenre;
 
 let home = document.querySelector('#home');

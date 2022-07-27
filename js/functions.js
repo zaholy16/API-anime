@@ -26,7 +26,7 @@ const drawCard = (image, title, type, episodes, status, date, stringGenres, scor
 
         clear();
         divTitle.innerHTML = "";
-        footerNav.hidden = false;
+        footerNav.hidden = true;
         drawDetails(image, title, type, episodes, status, date, stringGenres, score, popularity, favorites, synopsis);
     });
 }

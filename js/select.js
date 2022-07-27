@@ -22,41 +22,34 @@ fetch(`${URL}/genres/anime`)
 select.addEventListener("change", (evt) => {
 
     idGenre = parseInt(evt.target.value);
-    clear();
-    footerNav.hidden = false;
-    divTitle.innerHTML = "";
 
     if(idGenre == 0){
         window.location.reload();
     }
 
     pages(idGenre, 1);
-   
 }); 
 
 const pages = (genre, page) => {
+
+    clear();
+    divTitle.innerHTML = "";
     fetch(`${URL}/anime?genres=${genre}&page=${page}`) 
     .then(response => response.json())
     .then(data => {
         getCards(data.data);
-        console.log(data.data);
+        footerNav.hidden = false;
     }); 
 }
 
 page1.addEventListener("click", () => {
-
-    clear();
     pages(idGenre, 1);
 });
 
 page2.addEventListener("click", () => {
-
-    clear();
     pages(idGenre, 2);
 });
 
 page3.addEventListener("click", () => {
-
-    clear();
     pages(idGenre, 3);
 });
