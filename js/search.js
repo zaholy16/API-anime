@@ -17,7 +17,7 @@ formSearch.addEventListener("submit", (evt) => {
    
     let {searchAnime} = evt.target;
     clear();
-    footerNav.innerHTML = " ";
+    divTitle.innerHTML = "";
 
     fetch(`${URL}/anime?letter=${searchAnime.value}`)
         .then(response => response.json())

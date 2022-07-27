@@ -10,6 +10,7 @@ let getRandomAnime = (data) => {
             stringGenres += genre.name + " | ";
         });
         drawDetails(random.images.jpg.image_url, random.title, random.type, random.episodes, random.status, random.aired.string, stringGenres, random.score, random.popularity, random.favorites, random.synopsis);
+        stringGenres = "";
     });
 }
 
@@ -17,9 +18,8 @@ random.addEventListener("click", () => {
 
     clear();
     divTitle.innerHTML = "";
-    // footerNav.hidden = false;
 
-    fetch(`${URL}/random/anime`) //Promesa para traer datos de la API
+    fetch(`${URL}/random/anime`)
     .then(response => response.json())
     .then(data => getRandomAnime(data)); 
 

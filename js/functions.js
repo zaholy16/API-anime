@@ -7,7 +7,6 @@ const clear = () => {
     resultsCards.innerHTML = " ";
     detailCard.innerHTML = " ";
     containerSynopsis.innerHTML = " ";
-
 }
 
 const drawCard = (image, title, type, episodes, status, date, stringGenres, score, popularity, favorites, synopsis) => {

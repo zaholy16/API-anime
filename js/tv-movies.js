@@ -5,8 +5,6 @@ let titles = ["Most popular TVs", "Most Popular Movies"];
 
 tv.addEventListener("click", () => {
 
-    // clear();
-    // footerNav.hidden = true;
     divTitle.innerHTML = `<h1>TV</h1>`;
 
     if(idGenre == undefined){
@@ -18,10 +16,7 @@ tv.addEventListener("click", () => {
 
 movie.addEventListener("click", () => {
 
-    // clear();
-    // footerNav.hidden = true;
     divTitle.innerHTML = `<h1>Movies</h1>`;
-    
     if(idGenre == undefined){
         getTopMovieTV(types[1], titles[1]);
     }else {
@@ -42,7 +37,7 @@ const getTopMovieTV = (type, title) => {
 }
 
 const getTVMovieBySelect = (type) => {
-    
+
     clear();
     fetch(`${URL}/anime?genres=${idGenre}&type=${type}`)
     .then(response => response.json())
