@@ -31,8 +31,10 @@ const getTopMovieTV = (type, title) => {
     fetch(`${URL}/top/anime?type=${type}`)
     .then(response => response.json())
     .then(data => {
-        footerNav.hidden = true;
+        animes = data.data;
+        sortByName();
         getCards(data.data);
+        footerNav.hidden = true;
     }); 
 }
 
@@ -42,7 +44,9 @@ const getTVMovieBySelect = (type) => {
     fetch(`${URL}/anime?genres=${idGenre}&type=${type}`)
     .then(response => response.json())
     .then(data => { 
-        footerNav.hidden = true;
+        animes = data.data;
+        sortByName();
         getCards(data.data);
+        footerNav.hidden = true;
     }); 
 }

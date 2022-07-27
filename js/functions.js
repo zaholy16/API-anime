@@ -9,6 +9,13 @@ const clear = () => {
     containerSynopsis.innerHTML = " ";
 }
 
+const sortByName = () => {
+    animes.sort(function (a1, a2) {
+        return a1.title > a2.title ? 1 : -1;
+    });
+};
+      
+
 const drawCard = (image, title, type, episodes, status, date, stringGenres, score, popularity, favorites, synopsis) => {
     let divCard = document.createElement("div");
     divCard.classList.add("card", "text-center", "d-flex", "align-items-center", "fw-bolder", "justify-content-center");

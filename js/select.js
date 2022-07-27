@@ -17,7 +17,9 @@ const renderSelectGenres = (genres) => {
 
 fetch(`${URL}/genres/anime`)
 .then(response => response.json())
-.then(data => renderSelectGenres(data.data));
+.then(data => {
+    renderSelectGenres(data.data);
+});
 
 select.addEventListener("change", (evt) => {
 
@@ -37,6 +39,8 @@ const pages = (genre, page) => {
     fetch(`${URL}/anime?genres=${genre}&page=${page}`) 
     .then(response => response.json())
     .then(data => {
+        animes = data.data;
+        sortByName();
         footerNav.hidden = false;
         getCards(data.data);
     }); 

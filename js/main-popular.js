@@ -1,4 +1,5 @@
 
+let animes = [];
 let genres = [];
 let stringGenres = "";
 let detailCard = "";
@@ -14,9 +15,8 @@ title.append(divTitle);
 divTitle.innerHTML = `<h1>Most popular</h1>`;
 
 const getCards = (data) => {
-    
+  
     data.forEach(card => {
-    
         genres = card.genres;
         genres.forEach(genre => {
             stringGenres += genre.name + " | ";
@@ -29,6 +29,8 @@ const getCards = (data) => {
 fetch(`${URL}/top/anime`)
 .then(response => response.json())
 .then(data => {
+    animes = data.data;
+    sortByName();
     getCards(data.data);
     footerNav.hidden = true;
 });

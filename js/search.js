@@ -22,5 +22,9 @@ formSearch.addEventListener("submit", (evt) => {
 
     fetch(`${URL}/anime?letter=${searchAnime.value}`)
         .then(response => response.json())
-        .then(data => getResultsSearch(data.data)); 
+        .then(data => {
+            animes = data.data;
+            sortByName();
+            getResultsSearch(data.data);
+        }); 
 });
