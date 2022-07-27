@@ -16,7 +16,7 @@ divTitle.innerHTML = `<h1>Most popular</h1>`;
 const getCards = (data) => {
     
     data.forEach(card => {
-
+    
         genres = card.genres;
         genres.forEach(genre => {
             stringGenres += genre.name + " | ";

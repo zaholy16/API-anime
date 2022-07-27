@@ -78,6 +78,10 @@
     background-color: rgb(154, 187, 249);
 }
 
+#imgCard {
+    height: 310px;
+}
+
 #poster img {
     margin-bottom: 20px;
 }

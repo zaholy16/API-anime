@@ -37,8 +37,8 @@ const pages = (genre, page) => {
     fetch(`${URL}/anime?genres=${genre}&page=${page}`) 
     .then(response => response.json())
     .then(data => {
-        getCards(data.data);
         footerNav.hidden = false;
+        getCards(data.data);
     }); 
 }
 

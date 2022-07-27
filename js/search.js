@@ -7,7 +7,8 @@ const getResultsSearch = (results) => {
         msgError.classList.add("text-center");
         msgError.innerHTML = `<h1>No results found</h1>`
         resultsCards.appendChild(msgError);
-    }else {
+    }
+    else{
         getCards(results);
     }
 }
